@@ -18,13 +18,28 @@
 
 ## 安装到 Codex
 
-尚未安装同名 skill 时：
+一键安装（会创建 `~/.codex/skills`）：
 
 ```bash
-git clone https://github.com/BiuBiuHu/blog-writing.git "${CODEX_HOME:-$HOME/.codex}/skills/blog-writing"
+npx blog-writing install
 ```
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/BiuBiuHu/blog-writing/main/scripts/install.sh | bash
+```
+
+`npx blog-writing update` 从受校验的 Git 源缓存更新安装副本，并同步已有 `.agents`、Cursor 和 Claude 发现目录。各安装的本地改动使用基线三方合并；任一冲突都保持全部安装不变，旧版本有备份。`doctor` 检查来源、版本和本地差异。需要 Git 和 Python 3.9+。
+
 也可以通过 Codex 的 `skill-installer` 从本仓库安装，指定仓库根目录作为 skill 路径、名称 `blog-writing`。已存在同名目录时，先备份并检查差异，不要直接覆盖。
+
+手动安装：
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/BiuBiuHu/blog-writing.git ~/.codex/skills/blog-writing
+```
+
+也可以克隆到其它位置，再软链到 `~/.codex/skills/blog-writing`。当前环境若设置了 `CODEX_HOME`，目标目录为 `"${CODEX_HOME}/skills/blog-writing"`。
 
 安装后在下一轮对话使用 `$blog-writing`。
 

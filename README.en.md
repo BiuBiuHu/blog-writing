@@ -18,13 +18,28 @@ This is an instruction package, not a standalone blog application. It relies on 
 
 ## Install in Codex
 
-If a skill with this name is not already installed:
+One-liner (creates `~/.codex/skills` if needed):
 
 ```bash
-git clone https://github.com/BiuBiuHu/blog-writing.git "${CODEX_HOME:-$HOME/.codex}/skills/blog-writing"
+npx blog-writing install
 ```
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/BiuBiuHu/blog-writing/main/scripts/install.sh | bash
+```
+
+`npx blog-writing update` uses a verified Git source cache and synchronizes the installed skill snapshots. Existing `.agents`, Cursor and Claude skill surfaces are included; per-install local edits use a verified baseline and three-way merge. Any conflict leaves all installations unchanged, with backups retained. `doctor` checks provenance, versions and local overrides. Git and Python 3.9+ are required.
+
 Alternatively, use Codex's `skill-installer` with this repository, its root as the skill path, and `blog-writing` as the installed name. If the directory already exists, back it up and inspect differences before replacing anything.
+
+Manual clone:
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/BiuBiuHu/blog-writing.git ~/.codex/skills/blog-writing
+```
+
+Or clone elsewhere and symlink into `~/.codex/skills/blog-writing`. If `CODEX_HOME` is set, the destination is `"${CODEX_HOME}/skills/blog-writing"`.
 
 Invoke `$blog-writing` in the next conversation turn after installation.
 

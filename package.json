@@ -1,0 +1,38 @@
+{
+  "name": "blog-writing",
+  "version": "0.1.0",
+  "description": "CLI to install, update, and diagnose the BiuBiuHu/blog-writing Codex skill",
+  "bin": {
+    "blog-writing": "bin/blog-writing.js"
+  },
+  "files": [
+    "bin/blog-writing.js",
+    "scripts/install.sh",
+    "scripts/sync-local-skills.py",
+    "VERSION"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiuBiuHu/blog-writing.git"
+  },
+  "homepage": "https://github.com/BiuBiuHu/blog-writing#readme",
+  "bugs": {
+    "url": "https://github.com/BiuBiuHu/blog-writing/issues"
+  },
+  "keywords": [
+    "codex",
+    "skills",
+    "blog",
+    "writing",
+    "cli",
+    "cursor",
+    "claude"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
