@@ -1,0 +1,4 @@
+interface:
+  display_name: "博客写作"
+  short_description: "一手实践写作、中英文与 HTML 配图整理、预览检查及获授权后的博客发布"
+  default_prompt: "使用 $blog-writing，保留真实口吻，整理中英文稿与 HTML 配图，验证后按已授权范围发布博客。"
